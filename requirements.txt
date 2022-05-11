@@ -1,0 +1,4 @@
+Django==1.11.11
+djangorestframework==3.13.1
+djangorestframework_simplejwt==4.4.0
+numpy==1.13.3
