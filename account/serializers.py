@@ -1,6 +1,3 @@
-from dataclasses import field
-from pyexpat import model
-from numpy import True_
 from rest_framework import serializers
 from account.models import MyUser
 
@@ -25,8 +22,9 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         else:
             attrs.pop('password2')
             return attrs
-    def create(self, validated_data):
-        return MyUser.objects.create(**validated_data)
+    
+    def create(self,validated_data):
+        return MyUser.objects.create_user(**validated_data)
     
 class UserLoginSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(max_length=255)

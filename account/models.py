@@ -31,7 +31,6 @@ class MyUserManager(BaseUserManager):
             nationality=nationality
             
         )
-
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -43,10 +42,10 @@ class MyUserManager(BaseUserManager):
         """
         user = self.create_user(
             email,
-            password=password,
             date_of_birth=date_of_birth,
             name=name,
-            nationality=nationality
+            nationality=nationality,
+            password=password
             
         )
         user.is_admin = True
