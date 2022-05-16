@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "65699187-74eb-4264-9d99-c32bc089b302",
+		"name": "Api Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "date_of_birth",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nationality",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/api/user/register/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "home@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "987654321Aa!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/api/user/login/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_host}}/api/user/profile/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyNTEwMjY3LCJpYXQiOjE2NTI1MDk5NjcsImp0aSI6IjZmNDBkMjE5NjVkODQ1ZjdhZjVlN2QxOTNiYjA4Y2UzIiwidXNlcl9pZCI6MTR9.f94RnA4x6r96QoSRhddxxBbWPVN3cmHBVn9VrUJ_gt4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "password",
+							"value": "987654321Aa!",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "987654321Aa!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/api/user/changepassword/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"changepassword",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "home@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/api/user/send-reset-password-email/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"send-reset-password-email",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset password email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{local_host}}/api/user/send-reset-password-email/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"send-reset-password-email",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

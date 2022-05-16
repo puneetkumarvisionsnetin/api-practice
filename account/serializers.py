@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from account.models import MyUser
-
+from .utils import Util
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(style={'input_type':'password'},write_only=True)
@@ -76,6 +76,15 @@ class SendPasswordResetEmailSerializer(serializers.Serializer):
             print('Password Reset TOken ',token)
             link = 'http://localhost:3000/api/user/reset/'+uid+ '/' +token
             print('Password Reset Link...',link)
+
+            ## send email 
+            body = 'Click Following LInk To Reset Your Password ' + link
+            data = {
+                'subject': 'Reset Your Password',
+                'body': body,
+                'to_email': user.email,
+            }
+            Util.send_email(data)
             return attrs
         else:
             raise serializers.ValidationError('You are not registered')
