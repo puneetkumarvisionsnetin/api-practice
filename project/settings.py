@@ -143,3 +143,5 @@ STATIC_URL = '/static/'
 
 ## to regonize superuser
 AUTH_USER_MODEL = 'account.MyUser'
+
+# PASSWORD_RESET_TIMEOUT = 900    #900 seconds =15 mintues
